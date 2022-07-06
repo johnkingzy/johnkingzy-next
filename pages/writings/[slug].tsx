@@ -7,6 +7,7 @@ import { sanity, urlFor } from '../../client'
 import Layout from '../../components/Layout'
 import PortableComponent from '../../components/PortableComponent'
 import { shimmer, toBase64 } from '../../components/Simmer'
+import { appUrl, siteName, twitterUserName } from '../../config'
 import { Post } from '../../types'
 
 const PostDetail = ({ post }: { post: Post }) => {
@@ -15,9 +16,9 @@ const PostDetail = ({ post }: { post: Post }) => {
       <NextSeo
         title={post.seoTitle}
         description={post.seoDescription}
-        canonical="https://kailoon.com/"
+        canonical={appUrl}
         openGraph={{
-          url: 'https://kailoon.com/',
+          url: appUrl,
           title: post.seoTitle,
           description: post.seoDescription,
           images: [
@@ -29,11 +30,11 @@ const PostDetail = ({ post }: { post: Post }) => {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'kailoon.com',
+          site_name: siteName,
         }}
         twitter={{
-          handle: '@kailoon', //twitter:creator
-          site: '@kailoon', //twitter:site
+          handle: twitterUserName, //twitter:creator
+          site: twitterUserName, //twitter:site
           cardType: 'summary_large_image', //twitter:card
         }}
       />

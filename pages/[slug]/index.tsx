@@ -7,6 +7,7 @@ import groq from 'groq'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import ProjectsGallery from '../../components/ProjectsGallery'
 import PostsGallery from '../../components/PostsGallery'
+import { appUrl, siteName, twitterUserName } from '../../config'
 
 const CustomPage = ({ page }: { page: Page }) => {
   return (
@@ -14,9 +15,9 @@ const CustomPage = ({ page }: { page: Page }) => {
       <NextSeo
         title={page.seoTitle}
         description={page.seoDescription}
-        canonical="https://kailoon.com/"
+        canonical={appUrl}
         openGraph={{
-          url: 'https://kailoon.com/',
+          url: appUrl,
           title: page.seoTitle,
           description: page.seoDescription,
           images: [
@@ -28,11 +29,11 @@ const CustomPage = ({ page }: { page: Page }) => {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'kailoon.com',
+          site_name: siteName,
         }}
         twitter={{
-          handle: '@kailoon', //twitter:creator
-          site: '@kailoon', //twitter:site
+          handle: twitterUserName, //twitter:creator
+          site: twitterUserName, //twitter:site
           cardType: 'summary_large_image', //twitter:card
         }}
       />

@@ -1,6 +1,6 @@
 {
-  "name": "kailoon's personal site & portfolio",
-  "short_name": "kailoon",
+  "name": "Kingsley Solomon | @johnkingzy - Software Engineer",
+  "short_name": "johnkingzy",
   "icons": [
     {
       "src": "./images/android-chrome-192x192.png",
@@ -31,10 +31,10 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#0063ff",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope:": "./",
-  "description:": "kailoon's personal site & portfolio",
-  "start_url": "https://kailoon.com/"
+  "description:": "Kingsley Solomon | @johnkingzy - Software Engineer",
+  "start_url": "https://johnkingzy.dev/"
 }
