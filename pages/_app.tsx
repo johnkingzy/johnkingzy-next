@@ -12,6 +12,7 @@ import CookieConsent, {
   Cookies,
   getCookieConsentValue,
 } from 'react-cookie-consent'
+import { appConfig } from '../config'
 const isProduction = process.env.NODE_ENV === 'production'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -126,62 +127,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </div>
       )}
       <DefaultSeo
-        titleTemplate="kailoon — %s"
-        openGraph={{
-          type: 'website',
-          locale: 'en_IE',
-          url: 'https://kailoon.com/',
-          site_name: 'kailoon.com',
-        }}
-        twitter={{
-          handle: '@kailoon',
-          site: '@kailoon',
-          cardType: 'summary_large_image',
-        }}
-        additionalMetaTags={[
-          {
-            name: 'theme-color',
-            content: '#ffffff',
-          },
-          {
-            name: 'mask-icon',
-            content: 'safari-pinned-tab',
-          },
-        ]}
-        additionalLinkTags={[
-          {
-            rel: 'icon',
-            href: '/static/images/favicon.svg',
-            type: 'image/svg+xml',
-          },
-          {
-            rel: 'apple-touch-icon',
-            href: '/static/images/apple-touch-icon.png',
-            sizes: '180x180',
-            type: 'image/png',
-          },
-          {
-            rel: 'icon',
-            href: '/static/images/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            rel: 'icon',
-            href: '/static/images/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-          {
-            rel: 'mask-icon',
-            href: '/static/images/safari-pinned-tab.svg',
-            color: '#5bbad5',
-          },
-          {
-            rel: 'manifest',
-            href: '/static/site.webmanifest',
-          },
-        ]}
+        titleTemplate={appConfig.seo.default.title}
+        openGraph={appConfig.seo.default.openGraph}
+        twitter={appConfig.seo.default.twitter}
+        additionalMetaTags={appConfig.seo.default.additionalMetaTags}
+        additionalLinkTags={appConfig.seo.default.additionalLinkTags}
       />
       <Component {...pageProps} />
     </SWRConfig>

@@ -1,8 +1,10 @@
+import { appConfig } from "../config"
+
 const Footer = () => {
   return (
     <footer className="pb-20 lg:pb-0 text-sm text-gray-600 dark:text-gray-400">
       {new Date().getFullYear()}
-      &copy;kailoon. Made with{' '}
+      &copy;{appConfig.userName}. Made with{' '}
       <a
         href="https://nextjs.org"
         title="nextjs"

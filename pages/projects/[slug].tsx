@@ -9,6 +9,7 @@ import OtherProjects from '../../components/OtherProjects'
 import PortableComponent from '../../components/PortableComponent'
 import ProjectMeta from '../../components/ProjectMeta'
 import Testimonial from '../../components/Testimonial'
+import { appUrl, siteName, twitterUserName } from '../../config'
 import { Project } from '../../types'
 
 const ProjectDetail = ({ project }: { project: Project }) => {
@@ -21,9 +22,9 @@ const ProjectDetail = ({ project }: { project: Project }) => {
       <NextSeo
         title={project.seoTitle}
         description={project.seoDescription}
-        canonical="https://kailoon.com/"
+        canonical={appUrl}
         openGraph={{
-          url: 'https://kailoon.com/',
+          url: appUrl,
           title: project.seoTitle,
           description: project.seoDescription,
           images: [
@@ -36,11 +37,11 @@ const ProjectDetail = ({ project }: { project: Project }) => {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'kailoon.com',
+          site_name: siteName,
         }}
         twitter={{
-          handle: '@kailoon', //twitter:creator
-          site: '@kailoon', //twitter:site
+          handle: twitterUserName, //twitter:creator
+          site: twitterUserName, //twitter:site
           cardType: 'summary_large_image', //twitter:card
         }}
       />

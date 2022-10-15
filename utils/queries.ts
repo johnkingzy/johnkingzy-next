@@ -13,7 +13,7 @@ export const getPages = groq`
   `
 
 export const getAuthorDetails = groq`
-  *[_type == "author" && name == 'kailoon'][0]{
+  *[_type == "author" && name == 'johnkingzy'][0]{
     _id,
     name,
     bio,

@@ -5,8 +5,10 @@ import { Author } from '../types'
 import Dialog from './Dialog'
 import { useEffect, useState } from 'react'
 import { useAuthor } from '../utils/hooks'
+import { appConfig } from '../config'
+import { capitalise } from '../utils/string'
 
-const UserCard = () => {
+const UserCard = (): JSX.Element => {
   const [open, setOpen] = useState(false)
   const {
     author,
@@ -46,7 +48,7 @@ const UserCard = () => {
               <Image
                 priority={true}
                 src="/static/images/avatar.jpeg"
-                alt="Kailoon"
+                alt={capitalise(appConfig.userName)}
                 width={100}
                 height={100}
                 layout="responsive"
@@ -57,7 +59,7 @@ const UserCard = () => {
         </div>
         <div className="">
           <strong className="font-serif text-xl italic leading-none text-black dark:text-white">
-            kailoon
+            {appConfig.userName}
           </strong>
           <div className="flex space-x-4 text-sm text-gray-600 dark:text-teal-300">
             {!isLoading &&

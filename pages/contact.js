@@ -2,6 +2,7 @@ import Layout from '../components/Layout'
 import kwesforms from 'kwesforms'
 import { useEffect } from 'react'
 import { NextSeo } from 'next-seo'
+import { appConfig, appUrl } from '../config'
 
 const contact = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -12,20 +13,11 @@ const contact = () => {
   return (
     <Layout h1="Keep in touch" h2="How can I help?">
       <NextSeo
-        title="Contact page"
-        description="Get in touch with kailoon"
-        canonical="https://kailoon.com/"
-        openGraph={{
-          url: 'https://kailoon.com/',
-          title: 'Contact page',
-          description: 'Get in touch with kailoon',
-          site_name: 'kailoon.com',
-        }}
-        twitter={{
-          handle: '@kailoon', //twitter:creator
-          site: '@kailoon', //twitter:site
-          cardType: 'summary_large_image', //twitter:card
-        }}
+        title={appConfig.seo.contact.title}
+        description={appConfig.seo.contact.description}
+        canonical={appUrl}
+        openGraph={appConfig.seo.contact.openGraph}
+        twitter={appConfig.seo.contact.twitter}
       />
       <article>
         <form

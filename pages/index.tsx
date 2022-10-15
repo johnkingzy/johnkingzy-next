@@ -5,6 +5,7 @@ import { PortableText } from '@portabletext/react'
 import { Page } from '../types'
 import groq from 'groq'
 import { GetStaticProps } from 'next'
+import { appUrl, siteName, twitterUserName } from '../config'
 
 const Home = ({ page }: { page: Page }) => {
   return (
@@ -12,9 +13,9 @@ const Home = ({ page }: { page: Page }) => {
       <NextSeo
         title={page.seoTitle}
         description={page.seoDescription}
-        canonical="https://kailoon.com/"
+        canonical={appUrl}
         openGraph={{
-          url: 'https://kailoon.com/',
+          url: appUrl,
           title: page.seoTitle,
           description: page.seoDescription,
           images: [
@@ -26,11 +27,11 @@ const Home = ({ page }: { page: Page }) => {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'kailoon.com',
+          site_name: siteName,
         }}
         twitter={{
-          handle: '@kailoon', //twitter:creator
-          site: '@kailoon', //twitter:site
+          handle: twitterUserName, //twitter:creator
+          site: siteName, //twitter:site
           cardType: 'summary_large_image', //twitter:card
         }}
       />
